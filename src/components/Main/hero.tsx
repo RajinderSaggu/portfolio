@@ -23,7 +23,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          Hello, I'm
+          Hello, I m
         </motion.h2>
 
         {/* Name */}

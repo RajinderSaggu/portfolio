@@ -44,7 +44,7 @@ const AboutSection = () => {
   };
 
   const activeTab = TAB_DATA.find((t) => t.id === tab);
-
+console.log(isPending);
   return (
     <Section id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center px-6 xl:gap-16 sm:py-16 xl:px-20">

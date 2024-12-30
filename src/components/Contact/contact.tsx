@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { FaLinkedin, FaGithub, FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
+import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 import Section from "../section";
 import Link from "next/link";
 
@@ -10,13 +10,12 @@ const ContactSection = () => {
       icon: <FaLinkedin />,
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/rajinder-kaur-s-886398216/",
-   
     },
     {
       icon: <FaGithub />,
       label: "GitHub",
       href: "https://github.com/RajinderSaggu",
-      
+
     },
     // {
     //   icon: <FaPhoneAlt />,
@@ -64,12 +63,10 @@ const ContactSection = () => {
                   href={link.href as string}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`text-lg font-medium text-white hover:text-purple-500 ${link.isIconOnly ? "flex justify-center items-center" : ""
+                  className={`text-lg font-medium text-white hover:text-purple-500
                     }`}
                 >
-                  {!link.isIconOnly && (
-                    <span className="group-hover:underline">{link.label}</span>
-                  )}
+
                 </Link>
               )}
             </li>

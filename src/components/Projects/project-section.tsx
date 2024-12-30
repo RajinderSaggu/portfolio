@@ -2,6 +2,7 @@
 import React, { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Section from "../section";
+import Image from "next/image";
 import GradientHeading from "../heading";
 import Link from "next/link";
 
@@ -60,7 +61,7 @@ const ProjectsSection = () => {
             >
               <div className="relative p-6 ">
                 {/* Project Image with Padding */}
-                <img
+                <Image
                   src={project.image}
                   alt={project.title}
                   className="w-full h-60 object-cover rounded-lg mb-4"
