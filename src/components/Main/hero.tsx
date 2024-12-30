@@ -7,71 +7,79 @@ import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <div className="relative w-full h-screen overflow-hidden bg-black text-white">
-      {/* Animated Background */}
-      <motion.div
-        className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 0.5 }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          repeatType: "reverse",
-        }}
-        style={{
-          filter: "blur(200px)",
-        }}
-      />
+    <div className="relative w-full h-screen overflow-hidden  text-white flex items-center justify-center">
 
       {/* Main Content */}
       <motion.div
-        className="relative flex flex-col items-center justify-center h-full px-4 text-center sm:px-6 lg:px-8"
-        initial={{ opacity: 0, y: -50 }}
+        className="flex flex-col items-center text-center px-6 sm:px-10 lg:px-20"
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
+        {/* Greeting */}
         <motion.h2
-          className="text-gray-400 text-lg sm:text-2xl lg:text-3xl font-bold"
+          className="text-gray-300 text-sm sm:text-lg lg:text-xl font-medium"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.2 }}
         >
-          I am Rajinder Kaur Saggu
+          Hello, I'm
         </motion.h2>
 
-        <motion.h1
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+        {/* Name */}
+        <motion.h2
+          className="text-xl sm:text-2xl font-semibold bg-clip-text text-gray-400"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
-          <TypeAnimation
-            sequence={[
-              "Frontend Developer", 1000,
-              "Web Developer", 1000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </motion.h1>
+          Rajinder Kaur Saggu
+        </motion.h2>
 
+        {/* Animated Role */}
+     {/* Animated Role */}
+<motion.div
+  className="text-2xl sm:text-4xl lg:text-6xl font-bold text-white mt-4"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ delay: 0.6 }}
+>
+
+  <div className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 via-pink-500 to-red-500">
+  <TypeAnimation
+    sequence={[
+      "Frontend Developer",
+      2000,
+      "Web Enthusiast",
+      2000,
+      "React Specialist",
+      2000,
+    ]}
+    speed={50}
+    repeat={Infinity}
+  />
+</div>
+
+</motion.div>
+
+
+        {/* Description */}
         <motion.p
-          className="text-[#ADB7BE] mt-4 mb-8 text-sm sm:text-base lg:text-lg"
+          className="text-gray-400 mt-6 text-sm sm:text-lg lg:text-xl max-w-3xl"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
+          transition={{ delay: 0.8 }}
         >
-          Crafting seamless, responsive, and visually striking user interfaces with <br />
-          3+ years of expertise in modern frontend development and cutting-edge practices.
+          Crafting seamless, dynamic, and user-friendly digital experiences
+          with 3+ years of expertise in modern web technologies.
         </motion.p>
 
         {/* Buttons */}
         <motion.div
-          className="flex flex-col sm:flex-row sm:justify-center gap-4"
+          className="mt-8 flex flex-wrap gap-4 justify-center"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 1 }}
         >
           <Button
             text="Download CV"
@@ -83,17 +91,17 @@ const HeroSection = () => {
           />
           <Button
             text="LinkedIn"
-            icon={<FaLinkedin />}
             href="https://www.linkedin.com/in/rajinder-kaur-s-886398216/"
             variant="outline"
+            icon={<FaLinkedin />}
             iconPosition="right"
           />
           <Button
             text="GitHub"
-            icon={<FaGithub />}
             href="https://github.com/RajinderSaggu"
             target="_blank"
             variant="outline"
+            icon={<FaGithub />}
             iconPosition="right"
           />
         </motion.div>
