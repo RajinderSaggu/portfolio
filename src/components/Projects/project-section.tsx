@@ -46,50 +46,47 @@ const ProjectsSection = () => {
 
   return (
     <Section id="projects">
-        <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+      <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
         <GradientHeading text={"Projects"} level={2} className="text-4xl mb-6" />
+        <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
+          {projectsData.map((project, index) => (
+            <motion.li
+              key={index}
+              variants={cardVariants}
+              initial="initial"
+              animate={isInView ? "animate" : "initial"}
+              transition={{ duration: 0.5, delay: index * 0.4 }}
+              className="bg-[#18191E] rounded-lg shadow-lg overflow-hidden transform transition-transform duration-500 hover:scale-105 hover:shadow-xl relative group"
+            >
+              <div className="relative p-6 ">
+                {/* Project Image with Padding */}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-60 object-cover rounded-lg mb-4"
+                />
 
-      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
-        {projectsData.map((project, index) => (
-          <motion.li
-            key={index}
-            variants={cardVariants}
-            initial="initial"
-            animate={isInView ? "animate" : "initial"}
-            transition={{ duration: 0.5, delay: index * 0.4 }}
-            className="bg-gray-900  rounded-lg shadow-lg overflow-hidden transform transition-transform duration-500 hover:scale-105 hover:shadow-xl relative group"
-          >
-            <div className="relative p-6 ">
-              {/* Project Image with Padding */}
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-60 object-cover rounded-lg mb-4"
-              />
+                {/* Title */}
+                <h3 className="text-2xl font-semibold  text-white">{project.title}</h3>
 
-              {/* Title */}
-              <h3 className="text-2xl font-semibold  text-white">{project.title}</h3>
+                {/* Description (Always visible) */}
+                <p className="text-sm  mt-2 mb-4 text-white">{project.description}</p>
 
-              {/* Description (Always visible) */}
-              <p className="text-sm  mt-2 mb-4 text-white">{project.description}</p>
-
-              {/* Link Button */}
-              <div className="flex justify-end">
-              <Link
-              href={project.previewUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className=" py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-center hover:opacity-90 transition-opacity duration-300"
-              >
-                View Project
-              </Link>
+                {/* Link Button */}
+                <div className="flex justify-end">
+                  <Link
+                    href={project.previewUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className=" py-2 px-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white rounded-lg font-semibold text-center hover:opacity-90 transition-opacity duration-300"
+                  >
+                    View Project
+                  </Link>
                 </div>
-           
-            
-            </div>
-          </motion.li>
-        ))}
-      </ul>
+              </div>
+            </motion.li>
+          ))}
+        </ul>
       </div>
     </Section>
   );

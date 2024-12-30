@@ -113,7 +113,7 @@ const AboutSection = () => {
           </div>
 
           {/* Tab content */}
-          <div className="mt-3 bg-gray-800 p-4 rounded-lg shadow-md" role="tabpanel">
+          <div className="mt-3 bg-[#18191E]  p-4 rounded-lg shadow-md" role="tabpanel">
             {activeTab?.content || <p>Content not available.</p>}
           </div>
         </div>

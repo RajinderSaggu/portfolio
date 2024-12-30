@@ -1,72 +1,104 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import Button from "../button";
 import { FaDownload, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const HeroSection = () => {
   return (
-    <section className="lg:py-16  max-h-full">
-      <div className="grid grid-cols-1 sm:grid-cols-12"
-      >
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
-        >
-          <h2 className="text-gray-400 text-base sm:text-xl lg:text-3xl font-bold">
-            I am Rajinder Kaur Saggu
-          </h2>
-          <h2 className="text-white mb-4 text-4xl sm:text-5xl lg:text-7xl lg:leading-normal font-extrabold">
-            <TypeAnimation
-              sequence={[
-                "Frontend Developer",
-                1000,
-                "Web Developer",
-                1000,
-              ]}
-              wrapper="span"
-              speed={50}
-              repeat={Infinity}
-              className="bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500  to-pink-500"
-            />
-          </h2>
+    <div className="relative w-full h-screen overflow-hidden bg-black text-white">
+      {/* Animated Background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 0.5 }}
+        transition={{
+          duration: 3,
+          repeat: Infinity,
+          repeatType: "reverse",
+        }}
+        style={{
+          filter: "blur(200px)",
+        }}
+      />
 
-          <p className="text-[#ADB7BE] text-base sm:text-md mb-6 lg:text-lg">
-          Crafting seamless, responsive, and visually striking user interfaces with 
-         
-            <br />
-            3+ years of expertise in modern frontend development and cutting-edge practices.
-         
-          </p>
-          <div className="flex gap-3  xs:flex-col">
-          <Button text={"Download CV"} href="/rajinder-resume-frontend-2024.pdf" target="_blank" variant="primary" icon={<FaDownload className="text-sm" />} iconPosition="right"></Button>
-          <Button text={"Linkedin"} icon={<FaLinkedin/>} href="https://www.linkedin.com/in/rajinder-kaur-s-886398216/" variant="outline" iconPosition="right" ></Button>
-          <Button text={"Github"} icon={<FaGithub/>} href="https://github.com/RajinderSaggu" target="_blank" variant="outline" iconPosition="right"></Button>
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5 }}
-          className="col-span-4 place-self-center mt-4 lg:mt-0"
+      {/* Main Content */}
+      <motion.div
+        className="relative flex flex-col items-center justify-center h-full px-4 text-center sm:px-6 lg:px-8"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.h2
+          className="text-gray-400 text-lg sm:text-2xl lg:text-3xl font-bold"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.2 }}
         >
-          <div className="rounded-full  w-[250px] h-[250px] lg:w-[300px] lg:h-[400px] relative">
-            <Image
-              src="/images/hero.jpg"
-              alt="hero image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-full"
-              width={300}
-              height={300}
-            />
-          </div>
+          I am Rajinder Kaur Saggu
+        </motion.h2>
+
+        <motion.h1
+          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.4 }}
+        >
+          <TypeAnimation
+            sequence={[
+              "Frontend Developer", 1000,
+              "Web Developer", 1000,
+            ]}
+            wrapper="span"
+            speed={50}
+            repeat={Infinity}
+          />
+        </motion.h1>
+
+        <motion.p
+          className="text-[#ADB7BE] mt-4 mb-8 text-sm sm:text-base lg:text-lg"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.6 }}
+        >
+          Crafting seamless, responsive, and visually striking user interfaces with <br />
+          3+ years of expertise in modern frontend development and cutting-edge practices.
+        </motion.p>
+
+        {/* Buttons */}
+        <motion.div
+          className="flex flex-col sm:flex-row sm:justify-center gap-4"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.8 }}
+        >
+          <Button
+            text="Download CV"
+            href="/rajinder-resume-frontend-2024.pdf"
+            target="_blank"
+            variant="primary"
+            icon={<FaDownload className="text-sm" />}
+            iconPosition="right"
+          />
+          <Button
+            text="LinkedIn"
+            icon={<FaLinkedin />}
+            href="https://www.linkedin.com/in/rajinder-kaur-s-886398216/"
+            variant="outline"
+            iconPosition="right"
+          />
+          <Button
+            text="GitHub"
+            icon={<FaGithub />}
+            href="https://github.com/RajinderSaggu"
+            target="_blank"
+            variant="outline"
+            iconPosition="right"
+          />
         </motion.div>
-      </div>
-    </section>
+      </motion.div>
+    </div>
   );
 };
 

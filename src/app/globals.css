@@ -71,20 +71,6 @@
     --chart-5: 340 75% 55%;
   }
 }
-/* styles/globals.css */
-.scrollbar-thin::-webkit-scrollbar {
-  width: 8px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-thumb {
-  background: linear-gradient(to right, #6b46c1, #d53f8c);
-  border-radius: 9999px;
-}
-
-.scrollbar-thin::-webkit-scrollbar-track {
-  background: #f7fafc;
-  border-radius: 9999px;
-}
 
 @layer base {
   * {

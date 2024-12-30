@@ -31,12 +31,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth md:scroll-auto">
-          <AnimatedCursor/>
+    <html lang="en" className="scroll-smooth md:scroll-auto scroll-m-1">
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} antialiased`}
       >
-       
+        <div id="cursor-container">
+          <AnimatedCursor />
+        </div>
+
+
         {children}
       </body>
     </html>
