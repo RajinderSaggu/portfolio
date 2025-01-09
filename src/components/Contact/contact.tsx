@@ -66,7 +66,6 @@ const ContactSection = () => {
                   className={`text-lg font-medium text-white hover:text-purple-500
                     }`}
                 >
-
                 </Link>
               )}
             </li>

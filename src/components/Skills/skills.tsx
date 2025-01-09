@@ -24,7 +24,7 @@ const SkillsSection = () => {
     <Section id="skills">
       <div className="py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
       <GradientHeading text={"Skills"} level={2} className="text-4xl mb-6" />
-        <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 items-center">
+        <div className="sm:border-[#33353F] sm:border rounded-md py-8 px-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 items-center">
           {skillsList.map((skill, index) => (
             <motion.div
               key={index}

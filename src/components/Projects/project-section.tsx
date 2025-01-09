@@ -64,6 +64,8 @@ const ProjectsSection = () => {
                 <Image
                   src={project.image}
                   alt={project.title}
+                  width={200}
+                  height={100}
                   className="w-full h-60 object-cover rounded-lg mb-4"
                 />
 
